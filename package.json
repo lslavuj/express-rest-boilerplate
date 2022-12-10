@@ -1,0 +1,45 @@
+{
+  "name": "express-rest-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install",
+    "husky:branch": ".husky/check-branch-name.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lslavuj/express-rest-boilerplate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lslavuj/express-rest-boilerplate/issues"
+  },
+  "homepage": "https://github.com/lslavuj/express-rest-boilerplate#readme",
+  "dependencies": {
+    "chalk": "^5.1.2",
+    "express": "^4.18.2",
+    "winston": "^3.8.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
+    "@types/node": "^18.11.10",
+    "@typescript-eslint/eslint-plugin": "^5.45.1",
+    "@typescript-eslint/parser": "^5.45.1",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.29.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.4",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.8.0",
+    "typescript": "^4.9.3"
+  }
+}
