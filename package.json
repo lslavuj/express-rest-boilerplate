@@ -2,12 +2,12 @@
   "name": "express-rest-boilerplate",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install",
-    "husky:branch": ".husky/check-branch-name.sh"
+    "check-branch-name": ".husky/check-branch-name.sh"
   },
   "repository": {
     "type": "git",
