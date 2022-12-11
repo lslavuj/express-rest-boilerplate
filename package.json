@@ -8,7 +8,7 @@
     "check-branch-name": ".husky/check-branch-name.sh",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install",
-    "startLocalDatabase": "docker compose up -d"
+    "start-local-database": "docker compose up -d"
   },
   "repository": {
     "type": "git",
