@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  database:
+    container_name: express-rest-boilerplate-db
+    image: mysql:8
+    restart: always
+    ports:
+      - 3306:3306
+    volumes:
+      - ./.docker/mysql:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=localNGN
+      - MYSQL_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=password

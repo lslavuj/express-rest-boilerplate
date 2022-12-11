@@ -5,9 +5,10 @@
   "main": "index.ts",
   "type": "module",
   "scripts": {
+    "check-branch-name": ".husky/check-branch-name.sh",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install",
-    "check-branch-name": ".husky/check-branch-name.sh"
+    "startLocalDatabase": "docker compose up -d"
   },
   "repository": {
     "type": "git",
