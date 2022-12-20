@@ -23,7 +23,8 @@
   },
   "homepage": "https://github.com/lslavuj/express-rest-boilerplate#readme",
   "dependencies": {
-    "chalk": "^5.1.2",
+    "chalk": "4.1.2",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "winston": "^3.8.2"
   },
@@ -34,7 +35,6 @@
     "@types/node": "^18.11.10",
     "@typescript-eslint/eslint-plugin": "^5.45.1",
     "@typescript-eslint/parser": "^5.45.1",
-    "dotenv": "^16.0.3",
     "eslint": "^8.29.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",
