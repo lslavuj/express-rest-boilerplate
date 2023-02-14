@@ -1,7 +1,7 @@
 {
   "name": "express-rest-boilerplate",
   "version": "1.0.0",
-  "description": "",
+  "description": "Express typescript rest boilerplate",
   "main": "index.ts",
   "scripts": {
     "build": "rimraf ./dist && tsc",
@@ -16,7 +16,11 @@
     "type": "git",
     "url": "git+https://github.com/lslavuj/express-rest-boilerplate.git"
   },
-  "author": "",
+  "author": {
+    "name": "Luka Slavuj",
+    "email": "lukaslavuj@gmail.com",
+    "url": "https://www.linkedin.com/in/luka-slavuj-698199142"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/lslavuj/express-rest-boilerplate/issues"
