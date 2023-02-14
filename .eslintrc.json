@@ -16,5 +16,20 @@
   },
   "plugins": ["@typescript-eslint", "prettier"],
   "ignorePatterns": ["node_modules"],
-  "rules": {}
+  "rules": {
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never"
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".ts"]
+      }
+    }
+  }
 }
