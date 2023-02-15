@@ -18,6 +18,6 @@ const port = normalizePort(process.env.PORT || '3000');
 
 app.listen(port, () => {
   console.log(
-    chalk.green(`Express server listening to port ${port}, stage: ${process.env.NODE_ENV}!`),
+    chalk.green(`Express server listening on port ${port}, stage: ${process.env.NODE_ENV}!`),
   );
 });
