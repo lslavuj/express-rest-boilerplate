@@ -1,4 +1,5 @@
 import chalk from 'chalk';
+
 import app from '../../src/app';
 
 const normalizePort = (val: number | string): number | string | boolean => {

@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import type { NextFunction, Request, Response } from 'express';
+
 import createTest from './createTest';
+
+import type { NextFunction, Request, Response } from 'express';
 
 const createTestController = async (
   request: Request,

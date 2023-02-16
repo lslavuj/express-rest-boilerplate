@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 
-import express from 'express';
-import * as dotenv from 'dotenv';
 import chalk from 'chalk';
-import helmet from 'helmet';
 import cors from 'cors';
+import * as dotenv from 'dotenv';
+import express from 'express';
+import helmet from 'helmet';
 
-import testRoutes from './services/testService/routes';
 import errorHandler from './common/middlewares/ErrorHandler';
+import testRoutes from './services/testService/routes';
 
 const app = express();
 

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import type { NextFunction, Request, Response } from 'express';
-
 import deleteTest from './deleteTest';
+
+import type { NextFunction, Request, Response } from 'express';
 
 const deleteTestController = async (
   request: Request,

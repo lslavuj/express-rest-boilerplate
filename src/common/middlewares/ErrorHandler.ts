@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-nocheck
-import type { Request, Response, NextFunction } from 'express';
 
 import HttpStatusCode from '../enums/HttpStatusCode';
 import logger from '../utils/logger';
+
+import type { NextFunction, Request, Response } from 'express';
 
 const errorHandler = (
   error: unknown,

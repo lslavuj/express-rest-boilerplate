@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import type { NextFunction, Request, Response } from 'express';
-
 import updateTest from './updateTest';
+
+import type { NextFunction, Request, Response } from 'express';
 
 const updateTestController = async (
   request: Request,
