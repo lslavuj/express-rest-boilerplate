@@ -5,11 +5,11 @@ import deletePersonController from './deletePerson/deletePerson.controller';
 import getPersonController from './getPerson/getPerson.controller';
 import updatePersonController from './updatePerson/updatePerson.controller';
 
-const router = express.Router();
+const personRouter = express.Router();
 
-router.post('/person', createPersonController);
-router.get('/person:id', getPersonController);
-router.put('/person:id', updatePersonController);
-router.delete('/person:id', deletePersonController);
+personRouter.post('/person', createPersonController);
+personRouter.get('/person:id', getPersonController);
+personRouter.put('/person:id', updatePersonController);
+personRouter.delete('/person:id', deletePersonController);
 
-export default router;
+export default personRouter;
