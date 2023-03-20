@@ -7,7 +7,7 @@ import express from 'express';
 import helmet from 'helmet';
 
 import errorHandler from './common/middlewares/ErrorHandler';
-import testRoutes from './services/testService/routes';
+import personRoutes from './services/personService/routes';
 
 const app = express();
 
@@ -21,7 +21,7 @@ app.use(helmet());
 app.use(cors());
 
 // routes
-app.use('/api/v1', testRoutes);
+app.use('/api/v1', personRoutes);
 
 // @ts-ignore
 app.use((request, response) => {

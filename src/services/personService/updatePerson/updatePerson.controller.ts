@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import deleteTest from './deleteTest';
+import updateTest from './updatePerson';
+import HttpStatusCode from '../../../common/enums/HttpStatusCode';
 
 import type { NextFunction, Request, Response } from 'express';
 
-const deleteTestController = async (
+const updateTestController = async (
   request: Request,
   response: Response,
   next: NextFunction,
@@ -13,12 +14,12 @@ const deleteTestController = async (
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { body } = request;
 
-    const test = await deleteTest();
+    const test = await updateTest();
 
-    response.status(200).json(test).end();
+    response.status(HttpStatusCode.OK).json(test);
   } catch (error: unknown) {
     next(error);
   }
 };
 
-export default deleteTestController;
+export default updateTestController;

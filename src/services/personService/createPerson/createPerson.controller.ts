@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 
-import createTest from './createTest';
+import createTest from './createPerson';
+import HttpStatusCode from '../../../common/enums/HttpStatusCode';
 
 import type { NextFunction, Request, Response } from 'express';
 
@@ -16,7 +17,7 @@ const createTestController = async (
 
     const test = await createTest();
 
-    response.status(200).json(test).end();
+    response.status(HttpStatusCode.CREATED).json(test);
   } catch (error: unknown) {
     next(error);
   }
