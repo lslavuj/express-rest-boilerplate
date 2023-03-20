@@ -8,7 +8,7 @@
     "check-branch-name": ".husky/check-branch-name.sh",
     "prepare": "husky install",
     "start": "npm run build && node dist/app.js",
-    "start:dev": "ts-node-dev --respawn ./bin/www/server.ts",
+    "start:dev": "nodemon ./bin/www/server.ts",
     "start-local-database": "docker compose up -d",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,7 +19,7 @@
   "author": {
     "name": "Luka Slavuj",
     "email": "lukaslavuj@gmail.com",
-    "url": "https://www.linkedin.com/in/luka-slavuj-698199142"
+    "url": "https://www.linkedin.com/in/luka-slavuj"
   },
   "license": "ISC",
   "bugs": {
@@ -50,9 +50,11 @@
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.0",
     "lint-staged": "^13.0.4",
+    "nodemon": "^2.0.21",
     "prettier": "^2.8.0",
     "rimraf": "^3.0.2",
+    "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^4.9.3"
+    "typescript": "^5.0.2"
   }
 }
