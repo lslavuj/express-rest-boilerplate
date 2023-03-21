@@ -3,9 +3,9 @@ import { ValidationError } from 'yup';
 import logger from '../utils/logger';
 
 import type { Request } from 'express';
-import type { AnyObjectSchema } from 'yup';
+import type * as yup from 'yup';
 
-const parsePath = async <T = unknown>(request: Request, schema: AnyObjectSchema): Promise<T> => {
+const parsePath = async <T = unknown>(request: Request, schema: yup.AnyObject): Promise<T> => {
   try {
     return (await schema.noUnknown().validate(request.params, { abortEarly: false })) as T;
   } catch (error: unknown) {
