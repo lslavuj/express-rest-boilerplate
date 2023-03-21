@@ -9,6 +9,6 @@ services:
     volumes:
       - ./.docker/mysql:/var/lib/mysql
     environment:
-      - MYSQL_DATABASE=localNGN
+      - MYSQL_DATABASE=local
       - MYSQL_PASSWORD=password
       - MYSQL_ROOT_PASSWORD=password
