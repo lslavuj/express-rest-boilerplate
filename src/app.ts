@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-
 import chalk from 'chalk';
 import cors from 'cors';
 import * as dotenv from 'dotenv';
@@ -17,14 +15,14 @@ if (envConfig.error) {
   console.log(chalk.red('Missing .env!'));
   process.exit(1);
 }
+
 app.use(helmet());
 app.use(cors());
 
 // routes
 app.use('/api/v1', personRoutes);
 
-// @ts-ignore
-app.use((request, response) => {
+app.use((_request, response) => {
   response.status(404).json('Route not found!');
 });
 
