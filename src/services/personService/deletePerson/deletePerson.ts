@@ -1,3 +1,3 @@
-const deleteTest = (): Promise<void> => Promise.resolve();
+const deletePerson = (): Promise<void> => Promise.resolve();
 
-export default deleteTest;
+export default deletePerson;

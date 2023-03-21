@@ -1,25 +1,20 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-import getTest from './getPerson';
+import getPerson from './getPerson';
 import HttpStatusCode from '../../../common/enums/HttpStatusCode';
 
 import type { NextFunction, Request, Response } from 'express';
 
-const getTestController = async (
+const getPersonController = async (
   request: Request,
   response: Response,
   next: NextFunction,
 ): Promise<void> => {
   try {
-    // @ts-ignore
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { body } = request;
+    const person = await getPerson();
 
-    const test = await getTest();
-
-    response.status(HttpStatusCode.OK).json(test);
+    response.status(HttpStatusCode.OK).json({ person });
   } catch (error: unknown) {
     next(error);
   }
 };
 
-export default getTestController;
+export default getPersonController;

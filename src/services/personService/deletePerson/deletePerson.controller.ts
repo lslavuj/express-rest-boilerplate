@@ -1,25 +1,20 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-import deleteTest from './deletePerson';
+import deletePerson from './deletePerson';
 import HttpStatusCode from '../../../common/enums/HttpStatusCode';
 
 import type { NextFunction, Request, Response } from 'express';
 
-const deleteTestController = async (
+const deletePersonController = async (
   request: Request,
   response: Response,
   next: NextFunction,
 ): Promise<void> => {
   try {
-    // @ts-ignore
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { body } = request;
+    const person = await deletePerson();
 
-    const test = await deleteTest();
-
-    response.status(HttpStatusCode.OK).json(test);
+    response.status(HttpStatusCode.OK).json(person);
   } catch (error: unknown) {
     next(error);
   }
 };
 
-export default deleteTestController;
+export default deletePersonController;
