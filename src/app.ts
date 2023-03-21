@@ -4,7 +4,7 @@ import * as dotenv from 'dotenv';
 import express from 'express';
 import helmet from 'helmet';
 
-import errorHandler from './common/middlewares/ErrorHandler';
+import errorHandler from './middlewares/ErrorHandler';
 import personRoutes from './services/personService/routes';
 
 const app = express();
@@ -18,6 +18,8 @@ if (envConfig.error) {
 
 app.use(helmet());
 app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // routes
 app.use('/api/v1', personRoutes);
