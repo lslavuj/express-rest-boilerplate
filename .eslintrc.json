@@ -10,6 +10,14 @@
     "sourceType": "module"
   },
   "plugins": ["@typescript-eslint", "import"],
+  "overrides": [
+    {
+      "files": ["./src/database/migrations/**/*.ts"],
+      "rules": {
+        "class-methods-use-this": "off"
+      }
+    }
+  ],
   "rules": {
     "@typescript-eslint/consistent-type-imports": "error",
     "import/order": [

@@ -8,9 +8,11 @@
     "check-branch-name": ".husky/check-branch-name.sh",
     "prepare": "husky install",
     "start": "npm run build && node dist/app.js",
-    "start:dev": "nodemon ./bin/www/server.ts",
     "start-local-database": "docker compose up -d",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:dev": "nodemon ./bin/www/server",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "typeorm": "typeorm-ts-node-esm",
+    "migration:run": "npm run typeorm migration:run -- -d ./src/database/config"
   },
   "repository": {
     "type": "git",

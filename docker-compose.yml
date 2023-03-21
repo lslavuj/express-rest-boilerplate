@@ -1,7 +1,7 @@
-version: '3.8'
+version: '3.9'
 services:
-  database:
-    container_name: express-rest-boilerplate-db
+  testDB:
+    container_name: local
     image: mysql:8
     restart: always
     ports:
@@ -12,3 +12,4 @@ services:
       - MYSQL_DATABASE=local
       - MYSQL_PASSWORD=password
       - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_TCP_PORT=3306
