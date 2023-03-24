@@ -5,15 +5,15 @@ import type { PersonCreateData } from './bodySchema';
 const createPerson = async (personCreateData: PersonCreateData): Promise<Person> => {
   const { firstName, lastName, birthDate } = personCreateData;
 
-  const user = new Person();
+  const person = new Person();
 
-  user.firstName = firstName;
-  user.lastName = lastName;
-  user.birthDate = birthDate;
+  person.firstName = firstName;
+  person.lastName = lastName;
+  person.birthDate = birthDate;
 
-  const createdUser = await user.save();
+  await person.save();
 
-  return createdUser;
+  return person;
 };
 
 export default createPerson;
