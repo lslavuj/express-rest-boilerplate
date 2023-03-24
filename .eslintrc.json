@@ -12,7 +12,7 @@
   "plugins": ["@typescript-eslint", "import"],
   "overrides": [
     {
-      "files": ["./src/database/migrations/**/*.ts"],
+      "files": ["./src/database/migrations/**/*.ts", "./src/database/seeds/**/*.ts"],
       "rules": {
         "class-methods-use-this": "off"
       }

@@ -12,7 +12,9 @@
     "start:dev": "nodemon ./bin/www/server",
     "test": "echo \"Error: no test specified\" && exit 1",
     "typeorm": "typeorm-ts-node-esm",
-    "migration:run": "npm run typeorm migration:run -- -d ./src/database/config"
+    "migration:run": "npm run typeorm migration:run -- -d ./src/database/config",
+    "migration:revert": "npm run typeorm migration:revert -- -d ./src/database/config",
+    "seed": "ts-node ./node_modules/typeorm-extension/dist/cli/index.js seed -d ./src/database/config"
   },
   "repository": {
     "type": "git",
@@ -39,6 +41,7 @@
     "mysql2": "^3.2.0",
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.3.12",
+    "typeorm-extension": "^2.5.4",
     "winston": "^3.8.2",
     "yup": "^1.0.2"
   },
