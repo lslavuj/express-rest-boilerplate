@@ -1,5 +1,8 @@
+import * as dotenv from 'dotenv';
 import 'reflect-metadata';
 import { DataSource } from 'typeorm';
+
+dotenv.config();
 
 const { DATABASE_HOST, DATABASE, DATABASE_PASSWORD, DATABASE_PORT, DATABASE_USER } = process.env;
 

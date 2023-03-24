@@ -1,15 +1,16 @@
 version: '3.9'
 services:
-  testDB:
-    container_name: local
+  localDb:
+    container_name: express-rest-boilerplate
     image: mysql:8
+    env_file:
+      - .env
     restart: always
     ports:
       - 3306:3306
     volumes:
       - ./.docker/mysql:/var/lib/mysql
     environment:
-      - MYSQL_DATABASE=local
-      - MYSQL_PASSWORD=password
-      - MYSQL_ROOT_PASSWORD=password
-      - MYSQL_TCP_PORT=3306
+      - MYSQL_DATABASE=${DATABASE}
+      - MYSQL_PASSWORD=${DATABASE_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${DATABASE_PASSWORD}
