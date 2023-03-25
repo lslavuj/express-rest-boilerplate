@@ -1,5 +1,5 @@
-import HttpStatusCode from '../enums/HttpStatusCode';
-import logger from '../utils/logger';
+import HttpStatusCode from '../common/enums/HttpStatusCode';
+import logger from '../common/utils/logger';
 
 import type { NextFunction, Request, Response } from 'express';
 
@@ -7,6 +7,7 @@ const errorHandler = (
   error: Error,
   _request: Request,
   response: Response,
+  // eslint-disable-next-line no-unused-vars
   _next: NextFunction,
 ): Response => {
   logger.error(error);
