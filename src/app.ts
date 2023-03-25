@@ -1,4 +1,3 @@
-import chalk from 'chalk';
 import cors from 'cors';
 import * as dotenv from 'dotenv';
 import express from 'express';
@@ -12,8 +11,7 @@ const app = express();
 const envConfig = dotenv.config();
 
 if (envConfig.error) {
-  console.log(chalk.red('Missing .env!'));
-  process.exit(1);
+  throw new Error('Missing .env!');
 }
 
 app.use(helmet());

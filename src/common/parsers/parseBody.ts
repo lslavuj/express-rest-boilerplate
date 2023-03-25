@@ -1,8 +1,6 @@
 import { isEmpty } from 'lodash';
 import { ValidationError } from 'yup';
 
-import logger from '../utils/logger';
-
 import type { Request } from 'express';
 import type * as yup from 'yup';
 
@@ -19,8 +17,6 @@ const parseBody = async <T = unknown>(request: Request, schema: yup.AnyObject): 
 
     return validatedSchema;
   } catch (error: unknown) {
-    logger.error(error);
-
     if (error instanceof ValidationError) {
       throw error;
     }

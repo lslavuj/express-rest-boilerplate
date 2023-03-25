@@ -1,7 +1,5 @@
 import { ValidationError } from 'yup';
 
-import logger from '../utils/logger';
-
 import type { Request } from 'express';
 import type * as yup from 'yup';
 
@@ -9,8 +7,6 @@ const parsePath = async <T = unknown>(request: Request, schema: yup.AnyObject): 
   try {
     return (await schema.noUnknown().validate(request.params, { abortEarly: false })) as T;
   } catch (error: unknown) {
-    logger.error(error);
-
     if (error instanceof ValidationError) {
       throw error;
     }

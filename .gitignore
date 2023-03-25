@@ -145,4 +145,4 @@ dist
 
 .husky/_
 .docker/
-.errorLog/
+.logs/

@@ -31,18 +31,19 @@
   },
   "homepage": "https://github.com/lslavuj/express-rest-boilerplate#readme",
   "dependencies": {
-    "chalk": "^4.1.2",
     "cors": "^2.8.5",
     "date-fns": "^2.29.3",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "helmet": "^6.0.1",
+    "http-terminator": "^3.2.0",
     "lodash": "^4.17.21",
     "mysql2": "^3.2.0",
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.3.12",
     "typeorm-extension": "^2.5.4",
     "winston": "^3.8.2",
+    "winston-daily-rotate-file": "^4.7.1",
     "yup": "^1.0.2"
   },
   "devDependencies": {
