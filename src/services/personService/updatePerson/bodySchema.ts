@@ -8,8 +8,8 @@ const today = new Date();
 
 const bodySchema = yup
   .object({
-    firstName: yup.string().max(100).nullable().notRequired(),
-    lastName: yup.string().max(100).nullable().notRequired(),
+    firstName: yup.string().max(100).trim().nullable().notRequired(),
+    lastName: yup.string().max(100).trim().nullable().notRequired(),
     birthDate: yup.date().transform(parseDateString).max(today).nullable().notRequired(),
   })
   .required();
