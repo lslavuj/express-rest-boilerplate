@@ -1,9 +1,11 @@
+import { pick } from 'lodash';
+
 import toBcryptHash from '../../../common/utils/toBcryptHash';
 import User from '../../../database/models/User';
 
 import type { UserCreateData } from './bodySchema';
 
-const createUser = async (userCreateData: UserCreateData): Promise<User> => {
+const createUser = async (userCreateData: UserCreateData): Promise<unknown> => {
   const { firstName, lastName, birthDate, password, email } = userCreateData;
 
   const user = new User();
@@ -16,7 +18,7 @@ const createUser = async (userCreateData: UserCreateData): Promise<User> => {
 
   await user.save();
 
-  return user;
+  return pick(user, ['id', 'lastName', 'birthDate', 'email']);
 };
 
 export default createUser;

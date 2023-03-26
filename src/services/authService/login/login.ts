@@ -17,6 +17,8 @@ const login = async (loginData: LoginData): Promise<string> => {
   const user = await AppDataSource.getRepository(User)
     .createQueryBuilder('user')
     .where('user.email = :email', { email })
+    .select(['user.id', 'user.password'])
+    .addSelect('user.password')
     .getOne();
 
   if (!user) {

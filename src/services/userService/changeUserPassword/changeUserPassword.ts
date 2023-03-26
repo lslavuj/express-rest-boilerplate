@@ -5,7 +5,6 @@ import AppError from '../../../common/errors/AppError';
 import toBcryptHash from '../../../common/utils/toBcryptHash';
 import AppDataSource from '../../../database/config';
 import User from '../../../database/models/User';
-import getUser from '../getUser/getUser';
 
 import type { ChangeUserPasswordData } from './bodySchema';
 
@@ -15,7 +14,16 @@ const changeUserPassword = async (
 ): Promise<void> => {
   const { oldPassword, newPassword } = changeUserPasswordData;
 
-  const user = await getUser(id);
+  const user = await AppDataSource.getRepository(User)
+    .createQueryBuilder('user')
+    .where('user.id = :id', { id })
+    .select(['user.id', 'user.password'])
+    .addSelect('user.password')
+    .getOne();
+
+  if (!user) {
+    throw new Error();
+  }
 
   const isOldPasswordValid = await bcrypt.compare(oldPassword, user.password);
 
