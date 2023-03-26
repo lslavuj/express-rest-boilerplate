@@ -1,4 +1,4 @@
-import getPerson from './getPerson';
+import getUser from './getUser';
 import pathSchema from './pathSchema';
 import HttpStatusCode from '../../../common/enums/HttpStatusCode';
 import parsePath from '../../../common/parsers/parsePath';
@@ -6,7 +6,7 @@ import parsePath from '../../../common/parsers/parsePath';
 import type { NextFunction, Request, Response } from 'express';
 import type { InferType } from 'yup';
 
-const getPersonController = async (
+const getUserController = async (
   request: Request,
   response: Response,
   next: NextFunction,
@@ -14,12 +14,12 @@ const getPersonController = async (
   try {
     const { id } = await parsePath<InferType<typeof pathSchema>>(request, pathSchema);
 
-    const person = await getPerson(id);
+    const user = await getUser(id);
 
-    response.status(HttpStatusCode.OK).json(person);
+    response.status(HttpStatusCode.OK).json(user);
   } catch (error: unknown) {
     next(error);
   }
 };
 
-export default getPersonController;
+export default getUserController;

@@ -8,6 +8,6 @@ const pathSchema = yup
   })
   .required();
 
-export type PersonDeleteData = InferType<typeof pathSchema>;
+export type UserDeleteData = InferType<typeof pathSchema>;
 
 export default pathSchema;

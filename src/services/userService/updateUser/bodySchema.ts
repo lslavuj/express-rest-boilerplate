@@ -14,6 +14,6 @@ const bodySchema = yup
   })
   .required();
 
-export type PersonUpdateData = InferType<typeof bodySchema>;
+export type UserUpdateData = InferType<typeof bodySchema>;
 
 export default bodySchema;

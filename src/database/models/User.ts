@@ -1,9 +1,9 @@
 import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
-export const PERSON_TABLE = 'person' as const;
+export const USER_TABLE = 'user' as const;
 
 @Entity()
-class Person extends BaseEntity {
+class User extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -17,4 +17,4 @@ class Person extends BaseEntity {
   birthDate: Date;
 }
 
-export default Person;
+export default User;

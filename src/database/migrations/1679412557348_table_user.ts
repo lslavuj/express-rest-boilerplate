@@ -1,14 +1,14 @@
 import { Table } from 'typeorm';
 
-import { PERSON_TABLE } from '../models/Person';
+import { USER_TABLE } from '../models/User';
 
 import type { MigrationInterface, QueryRunner } from 'typeorm';
 
-class personTable1679412557348 implements MigrationInterface {
+class userTable1679412557348 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: PERSON_TABLE,
+        name: USER_TABLE,
         columns: [
           {
             name: 'id',
@@ -46,8 +46,8 @@ class personTable1679412557348 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable(PERSON_TABLE);
+    await queryRunner.dropTable(USER_TABLE);
   }
 }
 
-export default personTable1679412557348;
+export default userTable1679412557348;

@@ -4,7 +4,7 @@ import express from 'express';
 import helmet from 'helmet';
 
 import errorHandler from './middlewares/ErrorHandler';
-import personRoutes from './services/personService/routes';
+import userRoutes from './services/userService/routes';
 
 const app = express();
 
@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // routes
-app.use('/api/v1', personRoutes);
+app.use('/api/v1', userRoutes);
 
 app.use((_request, response) => {
   response.status(404).json('Route not found!');
