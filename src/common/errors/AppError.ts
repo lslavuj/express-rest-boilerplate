@@ -1,5 +1,10 @@
 import type HttpStatusCode from '../enums/HttpStatusCode';
 
+type ErrorDetails<T> = {
+  originalError?: unknown;
+  data: T;
+};
+
 class AppError<T> extends Error {
   readonly statusCode: HttpStatusCode;
 
@@ -9,19 +14,12 @@ class AppError<T> extends Error {
 
   readonly data: T | undefined;
 
-  constructor(
-    statusCode: HttpStatusCode,
-    message: string,
-    errorDetails: {
-      originalError?: unknown;
-      data?: T;
-    },
-  ) {
+  constructor(statusCode: HttpStatusCode, message: string, errorDetails?: ErrorDetails<T>) {
     super(message);
 
     Object.setPrototypeOf(this, new.target.prototype);
 
-    const { originalError, data } = errorDetails;
+    const { originalError, data } = errorDetails as ErrorDetails<T>;
 
     this.message = message;
     this.statusCode = statusCode;

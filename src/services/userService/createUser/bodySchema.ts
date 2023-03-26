@@ -1,6 +1,7 @@
 import * as yup from 'yup';
 
 import parseDateString from '../../../common/parsers/transformFunctions/parseDateString';
+import passwordSchema from '../../../common/schemas/passwordSchema';
 
 import type { InferType } from 'yup';
 
@@ -11,6 +12,7 @@ const bodySchema = yup
     firstName: yup.string().max(100).trim().required(),
     lastName: yup.string().max(100).trim().required(),
     birthDate: yup.date().transform(parseDateString).max(today).required(),
+    password: passwordSchema,
   })
   .required();
 

@@ -1,3 +1,4 @@
+import toBcryptHash from '../../common/utils/toBcryptHash';
 import User from '../models/User';
 
 import type { DataSource } from 'typeorm';
@@ -12,6 +13,7 @@ class UserSeeder implements Seeder {
       firstName: 'Test',
       lastName: 'User',
       birthDate: new Date(),
+      password: await toBcryptHash('test'),
     });
 
     await userRepository.save(user);

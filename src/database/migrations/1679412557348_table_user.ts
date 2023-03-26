@@ -30,6 +30,11 @@ class userTable1679412557348 implements MigrationInterface {
             type: 'date',
           },
           {
+            name: 'password',
+            type: 'varchar',
+            length: '64',
+          },
+          {
             name: 'createdAt',
             type: 'timestamp',
             default: 'now()',
