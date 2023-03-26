@@ -3,7 +3,7 @@ import * as dotenv from 'dotenv';
 import express from 'express';
 import helmet from 'helmet';
 
-import errorHandler from './middlewares/ErrorHandler';
+import errorHandler from './middlewares/errorHandler';
 import loginRoutes from './services/authService/routes';
 import userRoutes from './services/userService/routes';
 
