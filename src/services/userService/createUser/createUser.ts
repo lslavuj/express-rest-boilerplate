@@ -4,13 +4,14 @@ import User from '../../../database/models/User';
 import type { UserCreateData } from './bodySchema';
 
 const createUser = async (userCreateData: UserCreateData): Promise<User> => {
-  const { firstName, lastName, birthDate, password } = userCreateData;
+  const { firstName, lastName, birthDate, password, email } = userCreateData;
 
   const user = new User();
 
   user.firstName = firstName;
   user.lastName = lastName;
   user.birthDate = birthDate;
+  user.email = email;
   user.password = await toBcryptHash(password);
 
   await user.save();

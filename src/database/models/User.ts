@@ -26,7 +26,7 @@ class User extends BaseEntity {
   birthDate: Date;
 
   @Column({ type: 'varchar', length: 64, unique: true })
-  email: Date;
+  email: string;
 
   @Column({ type: 'varchar', length: 64 })
   password: string;
