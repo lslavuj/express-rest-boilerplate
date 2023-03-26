@@ -12,7 +12,11 @@
   "plugins": ["@typescript-eslint", "import"],
   "overrides": [
     {
-      "files": ["./src/database/migrations/**/*.ts", "./src/database/seeds/**/*.ts"],
+      "files": [
+        "./src/database/migrations/**/*.ts",
+        "./src/database/seeds/**/*.ts",
+        "./src/database/valueTransformers/passwordHashTransformer.ts"
+      ],
       "rules": {
         "class-methods-use-this": "off"
       }

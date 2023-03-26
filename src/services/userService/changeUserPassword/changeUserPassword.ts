@@ -2,7 +2,6 @@ import bcrypt from 'bcryptjs';
 
 import HttpStatusCode from '../../../common/enums/HttpStatusCode';
 import AppError from '../../../common/errors/AppError';
-import toBcryptHash from '../../../common/utils/toBcryptHash';
 import AppDataSource from '../../../database/config';
 import User from '../../../database/models/User';
 
@@ -37,11 +36,9 @@ const changeUserPassword = async (
     throw new AppError(HttpStatusCode.BAD_REQUEST, 'Old and new password can not be the same!');
   }
 
-  const hashedNewPassword = await toBcryptHash(newPassword);
-
   const updatedUser = await AppDataSource.createQueryBuilder()
     .update(User)
-    .set({ password: hashedNewPassword })
+    .set({ password: newPassword })
     .where('id = :id', { id })
     .execute();
 

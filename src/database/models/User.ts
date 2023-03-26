@@ -1,13 +1,6 @@
 import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
-// import toBcryptHash from '../../common/utils/toBcryptHash';
-
-// import type { ValueTransformer } from 'typeorm';
-
-// const hash: ValueTransformer = {
-//   from: (value: string) => value,
-//   to: (value: string) => toBcryptHash(value),
-// };
+import PasswordHashTransformer from '../valueTransformers/passwordHashTransformer';
 
 export const USER_TABLE = 'user' as const;
 
@@ -28,7 +21,12 @@ class User extends BaseEntity {
   @Column({ type: 'varchar', length: 64, unique: true })
   email: string;
 
-  @Column({ type: 'varchar', length: 64, select: false })
+  @Column({
+    type: 'varchar',
+    length: 64,
+    select: false,
+    transformer: new PasswordHashTransformer(),
+  })
   password: string;
 }
 

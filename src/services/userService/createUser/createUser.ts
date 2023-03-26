@@ -1,6 +1,5 @@
 import { pick } from 'lodash';
 
-import toBcryptHash from '../../../common/utils/toBcryptHash';
 import User from '../../../database/models/User';
 
 import type { UserCreateData } from './bodySchema';
@@ -14,7 +13,7 @@ const createUser = async (userCreateData: UserCreateData): Promise<unknown> => {
   user.lastName = lastName;
   user.birthDate = birthDate;
   user.email = email;
-  user.password = await toBcryptHash(password);
+  user.password = password;
 
   await user.save();
 
