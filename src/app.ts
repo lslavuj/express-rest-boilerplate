@@ -26,6 +26,7 @@ app.use((_request, response) => {
   response.status(404).json('Route not found!');
 });
 
+// error handling middleware
 app.use(errorHandler);
 
 export default app;
