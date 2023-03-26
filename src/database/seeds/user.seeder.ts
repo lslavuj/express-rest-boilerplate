@@ -13,7 +13,8 @@ class UserSeeder implements Seeder {
       firstName: 'Test',
       lastName: 'User',
       birthDate: new Date(),
-      password: await toBcryptHash('test'),
+      email: 'test@user.com',
+      password: await toBcryptHash('Test12345!'),
     });
 
     await userRepository.save(user);

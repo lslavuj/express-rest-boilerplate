@@ -30,6 +30,11 @@ class userTable1679412557348 implements MigrationInterface {
             type: 'date',
           },
           {
+            name: 'email',
+            type: 'varchar',
+            isUnique: true,
+          },
+          {
             name: 'password',
             type: 'varchar',
             length: '64',

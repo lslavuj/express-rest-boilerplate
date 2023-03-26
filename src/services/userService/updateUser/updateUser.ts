@@ -10,7 +10,7 @@ const updateUser = async (id: number, userUpdateData: UserUpdateData): Promise<a
   const user = await AppDataSource.createQueryBuilder()
     .update(User)
     .set(userUpdateData)
-    .where('id = :id', { id: 1 })
+    .where('id = :id', { id })
     .execute();
 
   if (!user.affected) {

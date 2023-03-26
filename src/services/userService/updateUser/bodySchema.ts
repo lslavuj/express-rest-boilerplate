@@ -11,6 +11,7 @@ const bodySchema = yup
     firstName: yup.string().max(100).trim().nullable().notRequired(),
     lastName: yup.string().max(100).trim().nullable().notRequired(),
     birthDate: yup.date().transform(parseDateString).max(today).nullable().notRequired(),
+    email: yup.string().email().trim().nullable().notRequired(),
   })
   .required();
 

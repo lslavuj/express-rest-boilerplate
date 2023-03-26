@@ -16,6 +16,12 @@
       "rules": {
         "class-methods-use-this": "off"
       }
+    },
+    {
+      "files": ["./src/common/utils/getEnvironmentVariables.ts"],
+      "rules": {
+        "no-restricted-syntax": "off"
+      }
     }
   ],
   "rules": {

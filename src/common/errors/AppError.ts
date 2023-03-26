@@ -12,14 +12,14 @@ class AppError<T> extends Error {
 
   readonly originalError: unknown;
 
-  readonly data: T | undefined;
+  readonly data: T | undefined | null;
 
   constructor(statusCode: HttpStatusCode, message: string, errorDetails?: ErrorDetails<T>) {
     super(message);
 
     Object.setPrototypeOf(this, new.target.prototype);
 
-    const { originalError, data } = errorDetails as ErrorDetails<T>;
+    const { originalError = null, data = null } = (errorDetails as ErrorDetails<T>) || {};
 
     this.message = message;
     this.statusCode = statusCode;

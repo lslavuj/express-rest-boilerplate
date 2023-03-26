@@ -12,6 +12,7 @@ const bodySchema = yup
     firstName: yup.string().max(100).trim().required(),
     lastName: yup.string().max(100).trim().required(),
     birthDate: yup.date().transform(parseDateString).max(today).required(),
+    email: yup.string().email().trim().required(),
     password: passwordSchema,
   })
   .required();
