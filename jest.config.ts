@@ -1,0 +1,18 @@
+export default {
+  bail: 10,
+  clearMocks: true,
+  collectCoverage: true,
+  coverageDirectory: 'coverage',
+  coverageProvider: 'v8',
+  errorOnDeprecated: true,
+  globalSetup: './scripts/jestGlobalSetup.ts',
+  globalTeardown: '<rootDir>/scripts/jestGlobalTeardown.ts',
+  maxWorkers: '50%',
+  preset: 'ts-jest',
+  resetMocks: false,
+  setupFiles: ['<rootDir>/scripts/jestSetupEnvironment.ts'],
+  setupFilesAfterEnv: ['<rootDir>/scripts/jestSetupFilesAfterEnv.ts'],
+  slowTestThreshold: 5,
+  testEnvironment: 'node',
+  testMatch: ['<rootDir>/src/**/*.test.ts'],
+};

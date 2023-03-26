@@ -4,7 +4,9 @@ import User from '../../../database/models/User';
 
 import type { UserCreateData } from './bodySchema';
 
-const createUser = async (userCreateData: UserCreateData): Promise<unknown> => {
+type CreateUserOutput = Pick<User, 'id' | 'lastName' | 'birthDate' | 'email'>;
+
+const createUser = async (userCreateData: UserCreateData): Promise<CreateUserOutput> => {
   const { firstName, lastName, birthDate, password, email } = userCreateData;
 
   const user = new User();
@@ -17,7 +19,7 @@ const createUser = async (userCreateData: UserCreateData): Promise<unknown> => {
 
   await user.save();
 
-  return pick(user, ['id', 'lastName', 'birthDate', 'email']);
+  return pick(user, ['id', 'firstName', 'lastName', 'birthDate', 'email']);
 };
 
 export default createUser;

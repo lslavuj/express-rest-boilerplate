@@ -2,17 +2,27 @@ import * as dotenv from 'dotenv';
 import 'reflect-metadata';
 import { DataSource } from 'typeorm';
 
+import Environment from '../common/enums/Environment';
+
 import type { DataSourceOptions } from 'typeorm';
 import type { SeederOptions } from 'typeorm-extension';
 
 dotenv.config();
 
-const { DATABASE_HOST, DATABASE, DATABASE_PASSWORD, DATABASE_PORT, DATABASE_USER } = process.env;
+const {
+  DATABASE_HOST,
+  DATABASE,
+  DATABASE_PASSWORD,
+  DATABASE_PORT,
+  DATABASE_USER,
+  NODE_ENV,
+  TEST_DATABASE_PORT,
+} = process.env;
 
 const config: DataSourceOptions & SeederOptions = {
   type: 'mysql',
   host: DATABASE_HOST,
-  port: Number(DATABASE_PORT),
+  port: NODE_ENV === Environment.Test ? Number(TEST_DATABASE_PORT) : Number(DATABASE_PORT),
   username: DATABASE_USER,
   password: DATABASE_PASSWORD,
   database: DATABASE,

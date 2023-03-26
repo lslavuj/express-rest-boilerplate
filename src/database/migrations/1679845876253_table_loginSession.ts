@@ -1,7 +1,6 @@
-import { Table, TableForeignKey } from 'typeorm';
+import { Table } from 'typeorm';
 
 import { LOGIN_SESSION_TABLE } from '../models/LoginSession';
-import { USER_TABLE } from '../models/User';
 
 import type { MigrationInterface, QueryRunner } from 'typeorm';
 
@@ -81,15 +80,15 @@ class CreateLoginSession1631562211029 implements MigrationInterface {
       true,
     );
 
-    await queryRunner.createForeignKey(
-      LOGIN_SESSION_TABLE,
-      new TableForeignKey({
-        columnNames: ['userId'],
-        referencedColumnNames: ['id'],
-        referencedTableName: USER_TABLE,
-        onDelete: 'CASCADE',
-      }),
-    );
+    // await queryRunner.createForeignKey(
+    //   LOGIN_SESSION_TABLE,
+    //   new TableForeignKey({
+    //     columnNames: ['userId'],
+    //     referencedColumnNames: ['id'],
+    //     referencedTableName: USER_TABLE,
+    //     onDelete: 'CASCADE',
+    //   }),
+    // );
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
