@@ -4,7 +4,7 @@
   "description": "Express typescript rest boilerplate",
   "main": "index.ts",
   "scripts": {
-    "initDatabases": "npm run dockerCompose && npm run migration:run && npm run seed",
+    "initDatabases": "npm run dockerCompose && docker stop testDbContainer && npm run migration:run && npm run seed",
     "build": "rimraf ./dist && tsc",
     "check-branch-name": ".husky/check-branch-name.sh",
     "prepare": "husky install",

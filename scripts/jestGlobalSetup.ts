@@ -2,7 +2,7 @@ import childProcess from 'child_process';
 
 import logger from '../src/common/utils/logger';
 
-const setup = async (): Promise<void> => {
+const setup = (): void => {
   console.log('\n\n');
   console.log('Jest Global Setup');
   console.log('\n');

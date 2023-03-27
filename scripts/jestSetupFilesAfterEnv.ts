@@ -1,9 +1,13 @@
 import AppDataSource from '../src/database/config';
 
 global.beforeAll(async () => {
-  await AppDataSource.initialize();
+  if (!AppDataSource.isInitialized) {
+    await AppDataSource.initialize();
+  }
 });
 
 global.afterAll(async () => {
-  await AppDataSource.destroy();
+  if (AppDataSource.isInitialized) {
+    await AppDataSource.destroy();
+  }
 });
