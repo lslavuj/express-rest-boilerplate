@@ -1,11 +1,10 @@
 import { createHttpTerminator } from 'http-terminator';
 
-import normalizePort from './normalizePort';
 import app from '../../src/app';
 import logger from '../../src/common/utils/logger';
 import AppDataSource from '../../src/database/config';
 
-const port = normalizePort(process.env.PORT || '3000');
+const port = process.env.PORT || 3000;
 
 const server = app.listen(port, async () => {
   logger.info(`Server listening on PORT: ${port}, STAGE: ${process.env.NODE_ENV}`);
