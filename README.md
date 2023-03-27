@@ -34,39 +34,65 @@ Boilerplate Project for building RESTful APIs using Node.js, Express, TypeORM an
 2. Ensure your editor can run Eslint. Check the references for [WebStorm](https://www.jetbrains.com/help/webstorm/eslint.html) and [VSCode](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
 3. Ensure your editor can run Prettier. Check the references for [WebStorm](https://www.jetbrains.com/help/webstorm/prettier.html#ws_prettier_apply_code_style) and [VSCode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode).
 4. Ensure you are running minimum 16.14.2 version of node.
-5. Ensure you have a [Docker](https://www.docker.com/products/docker-desktop/) installed
+5. Ensure you have [Docker](https://www.docker.com/products/docker-desktop/) installed
 
 ## Getting Started
 
-1. Install required dependencies:
+Install required dependencies:
 
 ```bash
 npm i
 ```
 
-2. Create a `.env` file in root of your project and set it up following the `.env.example` file. Take care that `DATABASE_HOST` environment variable should be your local IP address.
+Create a `.env` file in root of your project and set it up following the `.env.example` file. Take care that `DATABASE_HOST` environment variable should be your local IP address.
 
-3. Ensure that Docker is running on your machine, than run script to setup local an test database with Docker:
+Ensure that Docker is running on your machine, than run script to setup local an test database with Docker:
 
 ```bash
 npm run initDatabases
 ```
 
-4. Run locally with:
+Run locally with:
 
 ```bash
 npm run start:dev
 ```
 
-4. Run tests with:
+## Tests
+
+Run tests with:
 
 ```bash
 npm test
 ```
 
+When tests are started, a clean test database will be started inside a docker container, migrations and seeds will run. Only files with suffix `.test.ts` will be tested. After all the test are done, database is dropped and docker container stopped.
+
+## Migrations
+
+Run migrations with:
+
+```bash
+npm run migration:run
+```
+
+Run migration rollback with:
+
+```bash
+migration:revert
+```
+
+## Seeds
+
+- Run seeds with:
+
+```bash
+npm run seed
+```
+
 ## Commits And Branching
 
-- Please read the following as commit structure follows the [conventional commits](https://www.conventionalcommits.org/) philosophy.
+- Read the following as commit structure follows the [conventional commits](https://www.conventionalcommits.org/) philosophy.
 
 - Keep your commits small and to the point.
 
