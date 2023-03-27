@@ -102,3 +102,5 @@ npm run seed
 - Add unit test for all functions (currently just for User CRUD)
 - Dockerize the whole app
 - Add more strict ESLint rules
+- Add updatedBy field to each table
+- Add history tables for each table
