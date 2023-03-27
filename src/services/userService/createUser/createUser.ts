@@ -3,8 +3,12 @@ import { omit } from 'lodash';
 import User from '../../../database/models/User';
 
 import type { UserCreateData } from './bodySchema';
+import type Context from '../../../common/types/Context';
 
-const createUser = async (userCreateData: UserCreateData): Promise<Omit<User, 'password'>> => {
+const createUser = async (
+  context: Context,
+  userCreateData: UserCreateData,
+): Promise<Omit<User, 'password'>> => {
   const { firstName, lastName, birthDate, password, email } = userCreateData;
 
   const user = new User();

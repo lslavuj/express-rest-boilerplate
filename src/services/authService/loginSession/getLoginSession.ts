@@ -3,9 +3,7 @@ import AppError from '../../../common/errors/AppError';
 import AppDataSource from '../../../database/config';
 import LoginSession from '../../../database/models/LoginSession';
 
-import type Context from '../../../common/types/Context';
-
-const getLoginSession = async (context: Context, tokenUuid: string): Promise<LoginSession> => {
+const getLoginSession = async (tokenUuid: string): Promise<LoginSession> => {
   const loginSession = await AppDataSource.getRepository(LoginSession).findOne({
     where: { tokenUuid },
   });

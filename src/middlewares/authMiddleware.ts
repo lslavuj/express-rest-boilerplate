@@ -47,7 +47,7 @@ const authMiddleware = async (
       user,
     };
 
-    const loginSession = await getLoginSession({ ...request.context }, tokenUuid);
+    const loginSession = await getLoginSession(tokenUuid);
     if (loginSession.loggedOutAt && new Date() > loginSession.loggedOutAt) {
       throw new AppError(
         HttpStatusCode.UNAUTHORIZED,

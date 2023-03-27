@@ -16,7 +16,7 @@ const logoutFromOneDevice = async (context: Context, token: string): Promise<voi
 
   const { tokenUuid } = jwt.decode(token) as TokenPayload;
 
-  await getLoginSession(context, tokenUuid);
+  await getLoginSession(tokenUuid);
 
   const logout = await AppDataSource.createQueryBuilder()
     .update(LoginSession)
