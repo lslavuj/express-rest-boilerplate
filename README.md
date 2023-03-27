@@ -10,12 +10,12 @@ Boilerplate Project for building RESTful APIs using Node.js, Express, TypeORM an
 - [Nodemon](https://github.com/remy/nodemon) for running the project locally
 - [Typescript](https://www.typescriptlang.org/)
 - [TypeOrm](https://typeorm.io/) and [MySQL](https://www.mysql.com/) database
-- Script for automatic creation of local and test database in a docker container, with migrations and seed run
+- Script for automatic creation of local and test database in a Docker container, with migrations and seed run
 - Linting with [ESLint](https://eslint.org/)
 - Consistent coding styles with [Prettier](https://prettier.io/) and [EditorConfig](https://editorconfig.org/)
 - [Husky](https://typicode.github.io/husky/#/) pre commit hooks
 - Following [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) philosophy
-- Unit tests with [Jest](https://jestjs.io/), starting a clean mysql test database as docker container on each test run
+- Unit tests with [Jest](https://jestjs.io/), starting a clean mysql test database as Docker container on each test run
 - Request validation with [Yup](https://github.com/jquense/yup)
 - [JSON Web Token](https://jwt.io/) Authentication
 - Graceful Error handling and logging with [Winston](https://github.com/winstonjs/winston)
@@ -34,7 +34,7 @@ Boilerplate Project for building RESTful APIs using Node.js, Express, TypeORM an
 2. Ensure your editor can run Eslint. Check the references for [WebStorm](https://www.jetbrains.com/help/webstorm/eslint.html) and [VSCode](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
 3. Ensure your editor can run Prettier. Check the references for [WebStorm](https://www.jetbrains.com/help/webstorm/prettier.html#ws_prettier_apply_code_style) and [VSCode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode).
 4. Ensure you are running minimum 16.14.2 version of node.
-5. Ensure you have a docker installed
+5. Ensure you have a [Docker](https://www.docker.com/products/docker-desktop/) installed
 
 ## Getting Started
 
@@ -46,7 +46,7 @@ npm i
 
 2. Create a `.env` file in root of your project and set it up following the `.env.example` file. Take care that `DATABASE_HOST` environment variable should be your local IP address.
 
-3. Run script to setup local an test database with docker:
+3. Ensure that Docker is running on your machine, than run script to setup local an test database with Docker:
 
 ```bash
 npm run initDatabases
