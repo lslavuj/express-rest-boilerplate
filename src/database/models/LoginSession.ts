@@ -2,8 +2,6 @@ import { BaseEntity, Column, Entity, Generated, ManyToOne } from 'typeorm';
 
 import User from './User';
 
-export const LOGIN_SESSION_TABLE = 'loginSession' as const;
-
 @Entity('loginSession')
 export class LoginSession extends BaseEntity {
   @Column({ primary: true })
@@ -46,5 +44,7 @@ export class LoginSession extends BaseEntity {
   @Column({ nullable: true })
   tokenExpirationDate?: Date;
 }
+
+export const LOGIN_SESSION_TABLE = 'loginSession' as const;
 
 export default LoginSession;

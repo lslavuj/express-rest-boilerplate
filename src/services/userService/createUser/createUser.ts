@@ -1,12 +1,10 @@
-import { pick } from 'lodash';
+import { omit } from 'lodash';
 
 import User from '../../../database/models/User';
 
 import type { UserCreateData } from './bodySchema';
 
-type CreateUserOutput = Pick<User, 'id' | 'lastName' | 'birthDate' | 'email'>;
-
-const createUser = async (userCreateData: UserCreateData): Promise<CreateUserOutput> => {
+const createUser = async (userCreateData: UserCreateData): Promise<Omit<User, 'password'>> => {
   const { firstName, lastName, birthDate, password, email } = userCreateData;
 
   const user = new User();
@@ -19,7 +17,7 @@ const createUser = async (userCreateData: UserCreateData): Promise<CreateUserOut
 
   await user.save();
 
-  return pick(user, ['id', 'firstName', 'lastName', 'birthDate', 'email']);
+  return omit(user, ['password']);
 };
 
 export default createUser;

@@ -2,7 +2,7 @@ import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 import PasswordHashTransformer from '../valueTransformers/passwordHashTransformer';
 
-export const USER_TABLE = 'user' as const;
+import type TypeOrmMeta from '../../common/types/TypeOrmMeta';
 
 @Entity()
 class User extends BaseEntity {
@@ -29,5 +29,9 @@ class User extends BaseEntity {
   })
   password: string;
 }
+
+export const USER_TABLE = 'user' as const;
+
+export type UserType = Omit<User, TypeOrmMeta>;
 
 export default User;

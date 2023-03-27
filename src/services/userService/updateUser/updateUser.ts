@@ -6,7 +6,7 @@ import getUser from '../getUser/getUser';
 
 import type { UserUpdateData } from './bodySchema';
 
-const updateUser = async (id: number, userUpdateData: UserUpdateData): Promise<any> => {
+const updateUser = async (id: number, userUpdateData: UserUpdateData): Promise<User> => {
   // TODO when mailing service is implemented, remove the possibility to edit email
   const user = await AppDataSource.createQueryBuilder()
     .update(User)
