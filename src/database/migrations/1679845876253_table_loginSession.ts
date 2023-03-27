@@ -4,7 +4,7 @@ import { LOGIN_SESSION_TABLE } from '../models/LoginSession';
 
 import type { MigrationInterface, QueryRunner } from 'typeorm';
 
-class CreateLoginSession1631562211029 implements MigrationInterface {
+class CreateLoginSession1679845876253 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
@@ -76,23 +76,23 @@ class CreateLoginSession1631562211029 implements MigrationInterface {
             isNullable: true,
           },
         ],
+        foreignKeys: [
+          {
+            columnNames: ['userId'],
+            referencedTableName: 'user',
+            referencedColumnNames: ['id'],
+            onDelete: 'CASCADE',
+            onUpdate: 'CASCADE',
+            name: 'fk_userId',
+          },
+        ],
       }),
       true,
     );
-
-    // await queryRunner.createForeignKey(
-    //   LOGIN_SESSION_TABLE,
-    //   new TableForeignKey({
-    //     columnNames: ['userId'],
-    //     referencedColumnNames: ['id'],
-    //     referencedTableName: USER_TABLE,
-    //     onDelete: 'CASCADE',
-    //   }),
-    // );
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.dropTable(LOGIN_SESSION_TABLE);
   }
 }
-export default CreateLoginSession1631562211029;
+export default CreateLoginSession1679845876253;
