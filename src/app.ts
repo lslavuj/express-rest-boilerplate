@@ -3,6 +3,7 @@ import * as dotenv from 'dotenv';
 import express from 'express';
 import helmet from 'helmet';
 
+import HttpStatusCode from './common/enums/HttpStatusCode';
 import errorHandler from './middlewares/errorHandler';
 import loginRoutes from './services/authService/routes';
 import userRoutes from './services/userService/routes';
@@ -25,7 +26,7 @@ app.use('/api/v1', userRoutes);
 app.use('/api/v1', loginRoutes);
 
 app.use((_request, response) => {
-  response.status(404).json('Route not found!');
+  response.status(HttpStatusCode.NOT_FOUND).json('Route not found!');
 });
 
 // error handling middleware
